@@ -1,0 +1,19 @@
+{% load staticfiles %}
+<script src="{% static 'js/jquery-1.12.1.min.js' %}"></script>
+<script src="{% static 'js/jquery-ui.min.js' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+<script src="{% static 'bootstrap/js/bootstrap-timepicker.min.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+<script src="{% static 'js/csrf.js' %}"></script>
+
+<script type="text/javascript">
+  (function($) {
+    $(document).ready(function() {
+        setTimeout(function(){
+            $('html').fadeIn(500);
+            $(document).trigger("documentFadedIn");
+        }, 200);
+    });
+  })(jQuery);
+</script>

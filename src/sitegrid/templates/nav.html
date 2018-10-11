@@ -1,0 +1,108 @@
+{% load staticfiles %}
+  <!-- Sidebar -->
+  <div id="sidebar">
+      <ul class="sidebar-nav">
+          <li class="expand-nav">
+              <img id="expand-arrow" class="expand-arrows" src="{% static 'images/expand_arrows.png' %}" onclick="expandNav()" />
+              <img id="collapse-arrow" class="expand-arrows" src="{% static 'images/collapse_arrows.png' %}" onclick="collaspeNav()" />
+          </li>
+          <li>
+              <a href="{% url 'accounts_account_info' %}" class="{{ request.session.disabled }}">
+                <span class="arrow-right"></span>
+                <img class="icon" src="{% static 'images/account.png' %}" />
+                <span class="pg-name">Account</span>
+              </a>
+          </li>
+          <li>
+              <a href="{% url 'alist_events' %}" class="{{ request.session.disabled }}">
+                <span class="arrow-right"></span>
+                <img class="icon" src="{% static 'images/events.png' %}" />
+                <span class="pg-name">Events</span>
+              </a>
+          </li>
+          {% if 'account_owner' in request.session.permissions or 'account_administer' in request.session.permissions %}
+          <li>
+              <a href="{% url 'alist_people' %}" class="{{ request.session.disabled }}">
+                <span class="arrow-right"></span>
+                <img class="icon" src="{% static 'images/people.png' %}" />
+                <span class="pg-name">People</span>
+              </a>
+          </li>
+          <li>
+              <a href="{% url 'alist_materials' %}" class="{{ request.session.disabled }}">
+                <span class="arrow-right"></span>
+                <img class="icon" src="{% static 'images/materials.png' %}" />
+                <span class="pg-name">Materials</span>
+              </a>
+          </li>
+          {% endif %}
+
+          <li></li>
+
+          {% if request.session.selected_event_id %}
+          <li>
+              <a id="create-highlight" href="{% url 'alist_event_details' event_id=request.session.selected_event_id %}" class="{{ request.session.disabled }}">
+                  <span class="arrow-right"></span>
+                  <img class="icon" src="{% static 'images/details.png' %}" />
+                  <span class="pg-name">Details</span>
+              </a>
+          </li>
+          {% endif %}
+
+          {% if request.session.selected_event_id %}
+          <li>
+              <a href="{% url 'alist_groups' event_id=request.session.selected_event_id %}" class="{{ request.session.disabled }}">
+                <span class="arrow-right"></span>
+                <img class="icon" src="{% static 'images/groups.png' %}" />
+                <span class="pg-name">Groups</span>
+              </a>
+          </li>
+          {% endif %}
+
+          {% if request.session.selected_event_id %}
+          <li>
+              <a href="{% url 'alist_extras' event_id=request.session.selected_event_id %}" class="{{ request.session.disabled }}">
+                <span class="arrow-right"></span>
+                <img class="icon" src="{% static 'images/addons.png' %}" />
+                <span class="pg-name">Add-ons</span>
+              </a>
+          </li>
+          {% endif %}
+
+
+          {% if request.session.selected_event_id %}
+          <li></li>
+          <li>
+              <a href="{% url 'alist_event_alists' event_id=request.session.selected_event_id %}" class="{{ request.session.disabled }}">
+                <span class="arrow-right"></span>
+                <img class="icon" src="{% static 'images/lists.png' %}" />
+                <span class="pg-name">Lists</span>
+              </a>
+          </li>
+          {% endif %}
+
+          {% if 'account_owner' in request.session.permissions or 'account_administer' in request.session.permissions %}
+          <li>
+              <a href="{% url 'administer_user_roles' %}" class="{{ request.session.disabled }}">
+                <span class="arrow-right"></span>
+                <img class="icon" src="{% static 'images/admin.png' %}" />
+                <span class="pg-name">Admin</span>
+              </a>
+          </li>
+
+          <li></li>
+
+          <li>
+              <a href="{% url 'reports_reports' %}" class="{{ request.session.disabled }}">
+                <span class="arrow-right"></span>
+                <img class="icon" src="{% static 'images/reports.png' %}" />
+                <span class="pg-name">Reports</span>
+              </a>
+          </li>
+          {% endif %}
+
+          <li></li>
+      </ul>
+      <!-- <div id="footer">A-LIST &#169; All Rights Reserved | 2016</div> -->
+  </div>
+  <!-- /#sidebar-wrapper -->

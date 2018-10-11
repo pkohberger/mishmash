@@ -1,0 +1,59 @@
+{% extends 'content_header.shpaml' %}
+
+  % block extra_head_content
+    {{ block.super }}
+    style type="text/css" VERBATIM
+      
+      .main-content {
+        /* border: 1px solid violet; */
+        width: 100%;
+        min-height: 200px;
+        margin-top: 50px;
+      }
+      
+      table.csv-table {
+        border-collapse: separate;
+        border-spacing: 5px 20px;
+      }
+      
+      table.csv-table tbody tr th {
+        text-align: right;
+      }
+
+      .import_result { 
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      .success { color: #009900; }
+
+      .failure { color: #990000; }
+
+  {% block center_content %}
+  
+    .row.txt-page
+      .col-md-12
+        .main-content.dk_gray
+          form.form action="." method="post" enctype="multipart/form-data"
+            {% csrf_token %}
+            .row
+              .col-md-12
+                {{ form.as_p }}
+                <br>
+            .row
+              .col-md-12  
+                button type="submit" | {{ submit_button_text }}
+      
+        {% if ok_import %}
+          .import_result
+            {% if good_data %}
+              .success  | {{ ok_import }}
+            {% else %}
+              .failure  | {{ ok_import }}
+            {% endif %}
+        {% endif %}
+  
+  {% endblock center_content %}
+  
+  
+  

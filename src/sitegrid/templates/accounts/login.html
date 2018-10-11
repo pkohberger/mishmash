@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block main_content %}
+  <div id="login" class="row">
+    <div class="inner">
+      <div id="login-form">
+        <h1>Welcome</h1>
+        <div class="welcome-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+
+
+        <form method="post" action="/accounts/login/">
+          {% csrf_token %}
+          <div class="login-inputs">
+            {{ login_form }}
+          </div>
+          <div class="row forgot-link"><a onclick="forgotPassword()">Forgot Password</a></div>
+          <div class="row">
+            <div class="col-xs-6">
+              <input class="btn sd-btn" type="submit" value="LOGIN" />
+            </div>
+            <div class="col-xs-6">
+              <a href="{% url 'accounts_create_account' %}">
+                <button type="button" class="btn delete-btn">REGISTER</button>
+              </a>
+            </div>
+          </div>
+          {% if error %}
+            <div class="row error-msg">{{ error }}</div>
+          {% endif %}
+        </form>
+
+      </div>
+
+      <div id="forgot-form">
+        <h1>Forgot Password</h1>
+        <div class="welcome-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+
+        <form method="post" action="/accounts/forgot/">
+          {% csrf_token %}
+          <input id="id_email" maxlength="100" name="email" placeholder="Email Address" type="email">
+          <div class="forgot-link"><a onclick="login()">Back</a></div>
+          <div class="login-subit">
+            <input class="btn sd-btn" type="submit" value="Send Request" />
+            {% if error %}
+              <div class="err">{{ error }}</div>
+            {% endif %}
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+{% endblock main_content %}
+
+{% block extra_footer_js %}
+  <script type="text/javascript">
+    if( "http://{{ request.get_host }}{% url 'accounts_forgot' %}" == window.location.href && "{{ error }}" != "") {
+      forgotPassword()
+    }
+    function forgotPassword() {
+      $("#login-form").hide();
+      $("#forgot-form").show();
+    }
+    function login() {
+      $("#forgot-form").hide();
+      $("#login-form").show();
+    }
+
+    {% for field in login_form %}
+      {% if error %}
+        $('#id_{{ field.name }}').css('border-bottom', '1px solid #D8000C');
+      {% endif %}
+    {% endfor %}
+  </script>
+{% endblock extra_footer_js %}

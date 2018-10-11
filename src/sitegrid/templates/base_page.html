@@ -1,0 +1,38 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    {% include 'header_files.html' %}
+
+    <!-- <script src="{% static 'js/moment.min.js' %}"></script>
+    <script src="{% static 'js/datetimepicker.min.js' %}"></script> -->
+    
+    {% block extra_head_content %}{% endblock extra_head_content %}
+  </head>
+
+  <body>
+
+    <!-- MAIN CONTENT -->
+    {% comment %}{% include 'page_nav.html' %}{% endcomment %}
+
+    {% block main_content %}
+    {% endblock main_content %}
+    <!-- MAIN CONTENT -->
+    
+    <!-- FOOTER -->
+      
+    <!--END footer -->
+
+    <!-- JAVASCRIPT -->
+    {% include 'footer_files.html' %}
+
+    {% block footer_js %}{% endblock footer_js %}
+    <!-- END Footer js -->
+    <!-- START Extra Footer js -->
+    {% block extra_footer_js %}{% endblock extra_footer_js %}
+    <!-- END Extra Footer js -->
+
+  </body>
+
+</html>

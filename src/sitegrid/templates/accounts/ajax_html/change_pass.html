@@ -1,0 +1,35 @@
+{% load staticfiles %}
+
+<div class="row">
+  <div class="col-xs-offset-4 col-xs-6 col-sm-5 col-md-4 padding-0">
+    <button id="change-pass-btn" class="btn clear-btn margin-0" onclick="changePass()">Change Password</button>
+  </div>
+</div>
+<div id="password-form" class="acc-forms">
+  <div class="row">
+    <div class="col-xs-4 padding-0">
+      <div class="info-label">Password:</div>
+    </div>
+    <div class="col-xs-7 col-md-6 padding-0">
+      <div class="info">
+        <input id="id_password" type="password" maxlength="190" name="password" required />
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-4 padding-0">
+      <div class="info-label">Confirm Password:</div>
+    </div>
+    <div class="col-xs-7 col-md-6 padding-0">
+      <div class="info">
+        <input id="id_confirm" type="password" maxlength="190" name="confirm" required />
+      </div>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+      <button id="save-pass-btn" class="btn sd-btn save-btn" onclick="savePass()">Save</button>
+    </div>
+  </div>
+</div>

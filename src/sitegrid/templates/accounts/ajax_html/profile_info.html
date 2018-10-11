@@ -1,0 +1,43 @@
+{% load staticfiles %}
+
+<div id="profile-section">
+  <h1>Profile Info:
+    <img class="edit-icon" src="{% static 'images/edit_icon.png' %}" onclick="editViewAccountInfo('profile-section', 'profile-form')">
+  </h1>
+  <div class="row">
+    <div class="col-xs-4 padding-0">
+      <div class="info-label">Name:</div>
+      <div class="info-label">Email:</div>
+      <div class="info-label">Phone:</div>
+    </div>
+    <div class="col-xs-7 col-md-6 padding-0">
+      <div class="info">{{ request.user.get_full_name }}</div>
+      <div class="info">{{ request.user.user_profile.contact_email }}</div>
+      <div class="info">{{ request.user.user_profile.contact_phone }}</div>
+    </div>
+  </div>
+</div>
+
+<div id="profile-form" class="acc-forms">
+  <h1>Profile Info:
+    <img class="save-icon" src="{% static 'images/save_icon.png' %}" onclick="saveEditedProfileInfo('profile-form')">
+  </h1>
+  <div class="row">
+    <div class="col-xs-4 padding-0">
+      <div class="info-label">Name:</div>
+      <div class="info-label">Email:</div>
+      <div class="info-label">Phone:</div>
+    </div>
+    <div class="col-xs-7 col-md-6 padding-0">
+      <div class="info">
+        <input id="id_name" type="text" maxlength="190" name="name" placeholder="Name" value="{{ request.user.get_full_name }}" required />
+      </div>
+      <div class="info">
+        <input id="id_email" type="email" name="email" placeholder="Email Address" value="{{ request.user.user_profile.contact_email }}" required />
+      </div>
+      <div class="info">
+        <input id="id_phone" type="text" name="phone" placeholder="555-555-5555" value="{{ request.user.user_profile.contact_phone }}" pattern="\d{3}[\-]\d{3}[\-]\d{4}" required />
+      </div>
+    </div>
+  </div>
+</div>

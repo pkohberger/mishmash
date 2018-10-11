@@ -1,0 +1,12 @@
+<div>You're receiving this e-mail because you requested a password reset for your user account at {{ site_name }}.</div>
+</br>
+<div>Please go to the following page and choose a new password:</div>
+</br>
+<a href="http://{{ domain }}{% url 'accounts_activate' uidb64=uid token=token %}" target="_blank"><button>PASSWORD RESET</button></a>
+</br>
+</br>
+<div>Your username, in case you've forgotten: {{ user.username }}</div>
+</br>
+<div>Thanks for using our site!</div>
+</br>
+The A-List team.

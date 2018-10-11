@@ -1,0 +1,31 @@
+{% load staticfiles %}
+
+<div id="user-section">
+  <h1>Account Info:
+    <img class="edit-icon" src="{% static 'images/edit_icon.png' %}" onclick="editViewAccountInfo('user-section', 'user-form')">
+  </h1>
+  <div class="row">
+    <div class="col-xs-4 padding-0">
+      <div class="info-label">Username:</div>
+    </div>
+    <div class="col-xs-7 col-md-6 padding-0">
+      <div class="info">{{ request.user.email }}</div>
+    </div>
+  </div>
+</div>
+
+<div id="user-form" class="acc-forms">
+  <h1>Account Info:
+    <img class="save-icon" src="{% static 'images/save_icon.png' %}" onclick="saveEditedUserInfo('profile-form')">
+  </h1>
+  <div class="row">
+    <div class="col-xs-4 padding-0">
+      <div class="info-label">Username:</div>
+    </div>
+    <div class="col-xs-7 col-md-6 padding-0">
+      <div class="info">
+        <input id="id_username" type="email" maxlength="190" name="username" value="{{ request.user.username }}" required />
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,144 @@
+/********** ALIST PAGE START **********/
+.add-list-form {
+  margin-top: 20px;
+  background-color: #373B3D;
+  padding: 10px;
+}
+.list-input {
+  border-bottom: 2px solid #FFF;
+}
+.list-input div {
+  padding: 0;
+}
+.add-list-form .list-input input {
+  width: 100%;
+  font-size: 30px;
+  text-transform: uppercase;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #FFF;
+  box-shadow: none;
+  padding: 0;
+}
+.list-input {
+  color: #FFFFFF;
+  padding: 0;
+}
+.list-input input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color: #FFFFFF;
+}
+.list-input input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: #FFFFFF;
+  opacity: 1;
+}
+.list-input input::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #FFFFFF;
+  opacity: 1;
+}
+.list-input input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #FFFFFF;
+}
+.add-list-form .list-input input::-webkit-input-placeholder { 
+  font-size: 26px;
+  font-family: 'Catamaran', sans-serif;
+  color: #FFF;
+  font-weight: 100;
+}
+.add-list-form .list-input input::-moz-placeholder { 
+  font-size: 26px;
+  font-family: 'Catamaran', sans-serif;
+  color: #FFF;
+  font-weight: 100;
+}
+.add-list-form .list-input input:-ms-input-placeholder { 
+  font-size: 26px;
+  font-family: 'Catamaran', sans-serif;
+  color: #FFF;
+  font-weight: 100;
+}
+.add-list-form .list-input input:-moz-placeholder { 
+  font-size: 26px;
+  font-family: 'Catamaran', sans-serif;
+  color: #FFF;
+  font-weight: 100;
+}
+.alist-img { 
+  width: 100%;
+  max-height: 300px;
+}
+.alist-header {
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+.event-title-admin-list {
+  background-color: #373B3D;
+  width: 1000px;
+  margin-left: 15px;
+  padding: 5px 15px;
+}
+.title-event-admin {
+  font-size: 14px;
+}
+.title-event-admin .admins{
+  font-size: 18px;
+}
+.admin-list span {
+  font-size: 28px;
+}
+.alist {
+  background-color: #FFFFFF;
+  padding: 20px 10px;
+}
+.list-header {
+  color: #FFFFFF;
+  margin: 0 15px 20px 15px;
+}
+.list-bar {
+  background-color: #808080;
+}
+.list-bar .h2 {
+  text-transform: uppercase;
+  margin-left: 2%;
+  border-bottom: 2px solid #FFFFFF;
+  padding-left: 0;
+}
+
+.group-admins {
+  background-color: #C0C0C0;
+  color: #FFFFFF;
+}
+.selected-group-admin-list {
+  text-transform: uppercase;
+  width: 96%;
+  font-size: 20px;
+  color: #FFFFFF;
+  border: none;
+  border-bottom: 2px solid #FFFFFF;
+  background-color: #C0C0C0;
+  outline: none;
+  margin-bottom: 20px;
+  float: left;
+  margin: 10px 2%;
+}
+.selected-group-admin-list::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color: #FFFFFF;
+}
+.selected-group-admin-list:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: #FFFFFF;
+  opacity: 1;
+}
+.selected-group-admin-list::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #FFFFFF;
+  opacity: 1;
+}
+.selected-group-admin-list:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #FFFFFF;
+}
+#list-new {
+  padding: 0;
+}
+#group-admins-new {
+  margin-bottom: 20px;
+}
+/********** ALIST PAGE END **********/

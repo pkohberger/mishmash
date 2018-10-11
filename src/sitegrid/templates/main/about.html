@@ -1,0 +1,302 @@
+{% extends 'base_page.html' %}
+{% load staticfiles %}
+
+{% block main_content %}
+<div class="row">
+  <div class="img-container">
+    <img class="img-responsive" src="{% static 'images/about_page/hero.png' %}">
+  </div>
+</div>
+
+<div id="overview-section">
+  <div class="row">
+    <div id="overview" class="col-md-8 col-md-offset-2">
+      <div class="section-title">
+        <span class="special-title">Overview of</span> APP
+      </div>
+      <div class="text-body">
+        <p>A-List is a comprehensive fully-secure app-based list management tool for the event industry, giving users complete control of any type of patron lists within their business; not only in the creation process, but in real-time as an event is happening. </p>
+        <br />
+        <p>Designed by event industry professionals with over 25 years of experience running multiple types of event, our breakthrough software allows a user to create an unlimited number of events, an unlimited amount of lists and sub-lists within an event, and assign read-only or admin privileges as needed to as many users as they like. From the back-end setup of the event, to the person at the front-end interfacing with your patrons, the entire system is designed for speed and flexibility using any smart phone or tablet.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="img-container">
+      <img class="img-responsive" src="{% static 'images/about_page/free_perspective.png' %}">
+    </div>
+  </div>
+</div>
+
+<div id="howitworks-section">
+  <div class="row">
+    <div id="howitworks" class="col-md-8 col-md-offset-2">
+      <div class="section-title">
+        <span class="special-title">The Anywhere</span> Web App
+      </div>
+      <div class="text-body">
+        <p>Events and their lists are set up using our web interface, but the power of A-List lies in the phone app and tablet capabilities. Now, in real time, event managers can edit the guest list, parking list, or any other list as needed with a few clicks on their device, for immediate accessibility to all front-of-house employees at all event access points.</p>
+        <br />
+        <p>No more radioing, texting, or running to the gate and hoping that your list addition or list change gets recorded. Using the app, you can make real time changes to any list within your event, which immediately populates to all devices at all access points.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row carousel-section">
+    
+  </div>
+
+  <div class="row instructions">
+    <div class="row">
+      <div class="col-sm-5 col-sm-offset-1 instruc-info">
+        <div class="row">
+          <div class="col-xs-3 instruc-imgs">
+            <img class="acct-img" src="{% static 'images/about_page/acct.png' %}">
+          </div>
+          <div class="col-xs-9">
+            <p>Create an account and start managing events in a more efficient, less stressful format. Kepp all the communications for events in one place.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-5 instruc-info">
+        <div class="row">
+          <div class="col-xs-3 instruc-imgs">
+            <img class="odd-img" src="{% static 'images/about_page/materials.png' %}">
+          </div>
+          <div class="col-xs-9">
+            <p>Log inventories of all items and people event-related, everything from items assigned to guests or in-house equipment can be logged as needed on the fly.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1 split-line"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-5 col-sm-offset-1 instruc-info">
+        <div class="row">
+          <div class="col-xs-3 instruc-imgs">
+            <img src="{% static 'images/about_page/events.png' %}">
+          </div>
+          <div class="col-xs-9">
+            <p>Archive old events to use as future templates, see current events, manage multiple events at a time with one account.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-5 instruc-info">
+        <div class="row">
+          <div class="col-xs-3 instruc-imgs">
+            <img src="{% static 'images/about_page/details.png' %}">
+          </div>
+          <div class="col-xs-9">
+            <p>Last minute changes in schedule or location? Details including, venue, time start, time end, and venus contact information can be created and edited with ease.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1 split-line"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-5 col-sm-offset-1 instruc-info">
+        <div class="row">
+          <div class="col-xs-3 instruc-imgs">
+            <img class="odd-img" src="{% static 'images/about_page/add-ons.png' %}">
+          </div>
+          <div class="col-xs-9">
+            <p>Create custom add-ons to any guest or group. Your front-end employee will be able to see whatever that patron is supposed to receive with their admission.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-5 instruc-info">
+        <div class="row">
+          <div class="col-xs-3 instruc-imgs">
+            <img src="{% static 'images/about_page/lists.png' %}">
+          </div>
+          <div class="col-xs-9">
+            <p>List and manage on the go. include anything and everything you’ll need for a successful event, check-in/out status of all guests, staff and their assigned assets and equipment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1 split-line"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-5 col-sm-offset-1 instruc-info">
+        <div class="row">
+          <div class="col-xs-3 instruc-imgs">
+            <img src="{% static 'images/about_page/admins.png' %}">
+          </div>
+          <div class="col-xs-9">
+            <p>Assign multiple event admins to one or all of the various lists who can make changes or additions to lists while the event is happening.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-5 instruc-info">
+        <div class="row">
+          <div class="col-xs-3 instruc-imgs">
+            <img src="{% static 'images/about_page/reports.png' %}">
+          </div>
+          <div class="col-xs-9">
+            <p>Assign multiple event admins to one or all of the various lists who can make changes or additions to lists while the event is happening.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="usecase-section">
+  <div class="row">
+    <div class="col-sm-5 col-sm-push-7 usecase-info">
+      <div class="usecase-info-title">Festival Planning</div>
+      <div class="usecase-info-text">
+        <div class="row">
+          <div class="col-xs-2">
+            <img src="{% static 'images/about_page/groups_blue.png' %}">
+          </div>
+          <div class="col-xs-10">
+            <p>Artists, Production, Concession, Security, GA, VIP</p>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-xs-2">
+            <img src="{% static 'images/about_page/addon_blue.png' %}">
+          </div>
+          <div class="col-xs-10">
+            <p>Access pass, drink ticket, VIP pass, radio, microphones</p>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-xs-2">
+            <img src="{% static 'images/about_page/lists_blue.png' %}">
+          </div>
+          <div class="col-xs-10">
+            <p>Stage 1, Backstage 1, Stage 2, Concession front</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-7 col-sm-pull-5 padding-0 margin-bot-10">
+      <img class="img-responsive case-img" src="{% static 'images/about_page/festival.png' %}">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-5 usecase-info">
+      <div class="usecase-info-title">Music Venue</div>
+      <div class="usecase-info-text">
+        <div class="row">
+          <div class="col-xs-2">
+            <img src="{% static 'images/about_page/groups_blue.png' %}">
+          </div>
+          <div class="col-xs-10">
+            <p>Barback, Bartend, Security, Sound Check, GA</p>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-xs-2">
+            <img src="{% static 'images/about_page/lists_blue.png' %}">
+          </div>
+          <div class="col-xs-10">
+            <p>Staff, Parking, Stage Equipment, Performers</p>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-xs-2">
+            <img src="{% static 'images/about_page/report_blue.png' %}">
+          </div>
+          <div class="col-xs-10">
+            <p>Items returned, Equipment used, tickets sold</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-7 padding-0 margin-bot-10">
+      <img class="img-responsive case-img" src="{% static 'images/about_page/music.png' %}">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-5 col-sm-push-7 usecase-info">
+      <div class="usecase-info-title">Weddings &amp; Parties</div>
+      <div class="usecase-info-text">
+        <div class="row">
+          <div class="col-xs-2">
+            <img src="{% static 'images/about_page/admins_blue.png' %}">
+          </div>
+          <div class="col-xs-10">
+            <p>Maid of Honor, Mother of bride, Planner</p>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-xs-2">
+            <img src="{% static 'images/about_page/addon_blue.png' %}">
+          </div>
+          <div class="col-xs-10">
+            <p>Seating Card, disposable camera, confetti, favor</p>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-xs-2">
+            <img src="{% static 'images/about_page/lists_blue.png' %}">
+          </div>
+          <div class="col-xs-10">
+            <p>Catering, band, bar, photographer, videographer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-7 col-sm-pull-5 padding-0 margin-bot-10">
+      <img class="img-responsive case-img" src="{% static 'images/about_page/wedding.png' %}">
+    </div>
+  </div>
+</div>
+
+<div id="contact-section">
+  <div class="row">
+    <div class="img-container parent">
+      <img class="img-responsive" src="{% static 'images/home_page/register.png' %}">
+      <div class="contact-section-info child">
+        <div class="contact-title">Intrested in using /A LIST?</div>
+        <div class="contact-text">Contact us for more information about how you can start using the web application to manage your events.</div>
+      </div>
+      <div class="row contact-btn">
+        <div class="col-xs-4 col-xs-offset-4 col-sm-2 col-sm-offset-5">
+          <button class="btn clear-btn">contact</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="footer-section">
+  <div class="row">
+    <div class="footer-info">/A List All Rights Reserved | 2016</div>
+  </div>
+</div>
+
+{% endblock main_content %}
+
+
+
+
+
+{% block extra_footer_js %}
+
+
+{% endblock extra_footer_js %}

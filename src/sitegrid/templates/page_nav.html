@@ -1,0 +1,24 @@
+{% load staticfiles %}
+<div id="top-nav" class="trans-nav">
+  <!-- <a href="{% url 'home' %}"><div class="top-brand pull-left"><span style="margin-right:-27px;">/</span><b>A</b><span class="brand">List</span></div></a> -->
+  <a href="{% url 'alist_events' %}"><div class="top-brand pull-left"><img class="img-responsive" src="{% static 'images/logo.png' %}"></div></a>
+  <div class="more-nav pull-right">
+    <a href="{% url 'accounts_login' %}">Sign In</a><span>|</span>
+    <a href="{% url 'about' %}">About</a><span>|</span>
+    <a>Support</a><span>|</span>
+    <a>Contact</a>
+    <img class="social-icons" src="{% static 'images/social_media_icons.png' %}" />
+  </div>
+  <div class="more-nav-mobile">
+    <a id="nav-toggle" data-toggle="collapse" data-target=".navbar-collapse" href="#"><span></span></a>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class=""><a href="{% url 'accounts_login' %}">Sign In</a></li>
+        <li class=""><a href="{% url 'about' %}">About</a></li>
+        <li class=""><a href="#">Support</a></li>
+        <li class=""><a href="#">Contact</a></li>
+        <li><img class="social-icons" src="{% static 'images/social_media_icons.png' %}" /></li>
+      </ul>
+    </div>
+  </div>
+</div>

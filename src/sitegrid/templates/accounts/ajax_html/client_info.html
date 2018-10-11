@@ -1,0 +1,57 @@
+{% load staticfiles %}
+
+<div id="org-section">
+  <div class="row">
+    <div class="col-xs-4 padding-0">
+      <h1>Organization:
+        {% if client_profile %}
+        <img class="edit-icon" src="{% static 'images/edit_icon.png' %}" onclick="editViewAccountInfo('org-section', 'org-form')">
+        {% endif %}
+      </h1>
+    </div>
+    <div class="col-xs-7 col-md-6 padding-0">
+      {% if client_profile.logo %}
+        <img src="{{ client_profile.logo.url }}" alt="Organization Logo" />
+      {% endif %}
+    </div>
+
+  </div>      
+  <div class="row">
+    <div class="col-xs-4 padding-0">
+      <div class="info-label">Name:</div>
+      <div class="info-label">Email:</div>
+      <div class="info-label">Phone:</div>
+    </div>
+    <div class="col-xs-7 col-md-6 padding-0">
+      <div class="info">{{ client_profile.organization_name }}</div>
+      <div class="info">{{ client_profile.contact_email }}</div>
+      <div class="info">{{ client_profile.contact_phone }}</div>
+    </div>
+  </div>
+</div>
+
+<div id="org-form" class="acc-forms">
+  <h1>Organization:
+    <img class="save-icon" src="{% static 'images/save_icon.png' %}" onclick="saveEditedClientInfo()">
+  </h1>
+  {% if client_profile %}
+    <div class="row">
+      <div class="col-xs-4 padding-0">
+        <div class="info-label">Name:</div>
+        <div class="info-label">Email:</div>
+        <div class="info-label">Phone:</div>
+      </div>
+      <div class="col-xs-7 col-md-6 padding-0">
+        <div class="info">
+          <input id="id_name" type="text" maxlength="190" name="name" placeholder="Oragnization Name" value="{{ client_profile.organization_name }}" required />
+        </div>
+        <div class="info">
+          <input id="id_email" type="email" name="email" placeholder="Contact Email" value="{{ client_profile.contact_email }}" required />
+        </div>
+        <div class="info">
+          <input id="id_phone" type="text" name="phone" placeholder="Contact Phone" value="{{ client_profile.contact_phone }}" required />
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</div>

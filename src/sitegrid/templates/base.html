@@ -1,0 +1,44 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include 'header_files.html' %}
+
+    {% block extra_head_content %}{% endblock extra_head_content %}
+  </head>
+
+  <body>
+
+    <!-- MAIN CONTENT -->
+    
+    <div id="wrapper">
+      
+        <!-- <div class="content"> -->
+          <div class="main-content">
+            <div class="dark-section">
+            {% block main_content %}
+            {% endblock main_content %}
+            </div>
+          </div>
+        <!-- </div> -->
+      {% block extra_bottom_content %}{% endblock extra_bottom_content %}
+    </div>
+    <!-- MAIN CONTENT -->
+    
+    <!-- FOOTER -->
+      
+    <!--END footer -->
+
+    <!-- JAVASCRIPT -->
+    {% include 'footer_files.html' %}
+
+    {% block footer_js %}{% endblock footer_js %}
+    <!-- END Footer js -->
+
+    <!-- START Extra Footer js -->
+    {% block extra_footer_js %}{% endblock extra_footer_js %}
+    <!-- END Extra Footer js -->
+
+  </body>
+
+</html>

@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block main_content %}
+<div>
+
+  <div class="row page-title">
+    <h1>Account Info</h1>
+  </div>
+
+  <div class="account-info">
+    <div class="acc-info-section">
+      <div id="client-ajax-html">
+      {% include 'accounts/ajax_html/client_info.html' %}
+      </div>
+
+      <br />
+
+      <form method="POST" enctype="multipart/form-data" action="{% url 'accounts_upload_logo' %}">
+        {% csrf_token %}
+        <div class="row">
+          <div class="col-xs-4 padding-0">
+            <div class="info-label">Logo:</div>
+          </div>
+          <div class="col-xs-7 col-md-6 padding-0">
+            <input id="id_logo" name="logo" type="file">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-offset-4 col-xs-3 padding-0">
+            <button type="submit" class="btn clear-btn margin-0">Upload</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="acc-info-section">
+      <div id="profile-ajax-html">
+      {% include 'accounts/ajax_html/profile_info.html' %}
+      </div>
+    </div>
+
+    <div class="acc-info-section">
+      <div id="user-ajax-html">
+      {% include 'accounts/ajax_html/user_info.html' %}
+      </div>
+      <br />
+      <div id="pass-ajax-html">
+      {% include 'accounts/ajax_html/change_pass.html' %}
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% endblock main_content %}
+
+{% block footer_js %}
+  <script type="text/javascript" src="{% static 'js/accounts/account_info.js' %}"></script>
+{% endblock footer_js %}
+
+{% block extra_footer_js %}
+<script type="text/javascript">
+  function saveEditedClientInfo() {
+    $.ajax({
+      type: 'POST',
+      url: '{% url 'accounts_edit_client_info' %}',
+      dataType: 'json',
+      async: true,
+      data: {
+        csrfmiddlewaretoken: '{{ csrf_token }}',
+        name: $('#org-form #id_name').val(),
+        email: $('#org-form #id_email').val(),
+        phone: $('#org-form #id_phone').val(),
+      },
+      success: function(json) {
+        if(json.error) {
+          editViewAccountInfo('org-section', 'org-form');
+          $('#org-form input').css('border-bottom', '1px solid #B5C7C9');
+          for(i in json.form_errors) {
+            $('#org-form #' + json.form_errors[i]['id']).css('border-bottom', '1px solid red');
+          }
+        }
+        else {
+          $('#client-ajax-html').html( json.client_info_html );
+          $('.edit-icon').show();
+        }
+      }
+    });
+  }
+
+  function saveEditedProfileInfo() {
+    $.ajax({
+      type: 'POST',
+      url: '{% url 'accounts_edit_profile_info' %}',
+      dataType: 'json',
+      async: true,
+      data: {
+        csrfmiddlewaretoken: '{{ csrf_token }}',
+        name: $('#profile-form #id_name').val(),
+        email: $('#profile-form #id_email').val(),
+        phone: $('#profile-form #id_phone').val(),
+      },
+      success: function(json) {
+        if(json.error) {
+          editViewAccountInfo('profile-section', 'profile-form');
+          $('#profile-form input').css('border-bottom', '1px solid #B5C7C9');
+          for(i in json.form_errors) {
+            $('#profile-form #' + json.form_errors[i]['id']).css('border-bottom', '1px solid red');
+          }
+        }
+        else {
+          $('#profile-ajax-html').html( json.profile_info_html );
+          $('.edit-icon').show();
+        }
+      }
+    });
+  }
+
+  function saveEditedUserInfo() {
+    $.ajax({
+      type: 'POST',
+      url: '{% url 'accounts_edit_user_info' %}',
+      dataType: 'json',
+      async: true,
+      data: {
+        csrfmiddlewaretoken: '{{ csrf_token }}',
+        username: $('#user-form #id_username').val(),
+      },
+      success: function(json) {
+        if(json.error) {
+          editViewAccountInfo('user-section', 'user-form');
+          $('#user-form input').css('border-bottom', '1px solid #B5C7C9');
+          for(i in json.form_errors) {
+            $('#user-form #' + json.form_errors[i]['id']).css('border-bottom', '1px solid red');
+          }
+        }
+        else {
+          $('#user-ajax-html').html( json.user_info_html );
+          $('.edit-icon').show();
+        }
+      }
+    });
+  }
+
+  function savePass() {
+    $.ajax({
+      type: 'POST',
+      url: '{% url 'accounts_change_password' %}',
+      dataType: 'json',
+      async: true,
+      data: {
+        csrfmiddlewaretoken: '{{ csrf_token }}',
+        password: $('#password-form #id_password').val(),
+        confirm: $('#password-form #id_confirm').val(),
+      },
+      success: function(json) {
+        if(json.error) {
+          changePass();
+          $('#password-form input').css('border-bottom', '1px solid #B5C7C9');
+          for(i in json.form_errors) {
+            $('#password-form #' + json.form_errors[i]['id']).css('border-bottom', '1px solid red');
+          }
+        }
+        else {
+          $('#pass-ajax-html').html( json.pass_html );
+          $('#password-form').hide();
+          $('#save-pass-btn').hide();
+          $('#change-pass-btn').show();
+        }
+      }
+    });
+  }
+</script>
+{% endblock extra_footer_js %}

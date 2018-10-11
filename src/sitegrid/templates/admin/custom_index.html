@@ -1,0 +1,49 @@
+{% extends 'admin/index.html' %}
+{% load i18n admin_static %}
+
+{% block title %}{% trans 'Site Grid Admin' %}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">{% trans 'Site Grid Administration' %}</h1>
+{% endblock %}
+
+{% block extrastyle %}
+  {{ block.super }}
+  <link rel="stylesheet" type="text/css" href="{% static "css/admin_styles.css" %}" />
+{% endblock extrastyle %}
+
+{% block extra_sidebar_content %}
+
+  {% if user.is_superuser %}
+    <div class="other-options-wrapper" style="float: right; margin-right: -80em; position: relative; width: 60em; border 2px solid blue; ">
+       <div class="module" id="other_operations" >
+         <h2>Other Scripts &amp; Pages</h2>
+          <br>
+          <ul>
+            <li></li>  
+            <li></li>
+            <li></li>  
+          </ul>         
+       </div>
+    </div>
+    <div style="clear: right;"></div>
+    <div class="spec_ops_wrapper" style="float: right; margin-right: -19em; position: relative; width: 18em; margin-top: 8px;"> 
+      <div class="module" id="special_operations" >
+          <h2 >Special Scripts &amp; Pages</h2>
+          <br>
+          <ul class="spec_list" style="margin-left: 0em">
+            <li></li>  
+            <li></li>
+            <li></li>
+            <li></li>  
+            <li></li>
+          </ul>
+        
+      </div>
+    </div>
+  {% endif %}
+{% endblock extra_sidebar_content %}
+
+
+
+
